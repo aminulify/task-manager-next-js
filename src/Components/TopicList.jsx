@@ -8,9 +8,7 @@ const getBlogData = async() =>{
     console.log(API_URL);
     
     try{
-        const res = await fetch(`${API_URL}/api/topics`,{
-            cache: 'no-store'
-        });
+        const res = await fetch(`${API_URL}/api/topics`);
 
         if(!res.ok){
             throw new Error("Failed to fetch topics");
