@@ -6,6 +6,7 @@
     display: flex !important;
     background-color: black !important;
     justify-content: space-between !important;
+    align-items: center;
 }
 .first{
     font-size: 20px;
