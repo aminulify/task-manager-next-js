@@ -7,3 +7,13 @@
     background-color: black !important;
     justify-content: space-between !important;
 }
+.first{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.second{
+    background: white;
+    padding: 8px 16px;
+}
