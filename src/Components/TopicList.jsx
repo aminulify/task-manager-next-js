@@ -8,7 +8,9 @@ const getBlogData = async() =>{
     console.log(API_URL);
     
     try{
-        const res = await fetch(`${API_URL}/api/topics`);
+        const res = await fetch(`${API_URL}/api/topics`,{
+            cache: "no-cache"
+        });
 
         if(!res.ok){
             throw new Error("Failed to fetch topics");
@@ -23,7 +25,7 @@ const getBlogData = async() =>{
 export default async function TopicList(){
 
     const topics = await getBlogData();
-    console.log(topics);
+    // console.log(topics);
 
     return (
         <>
