@@ -2,12 +2,30 @@
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiOutlinePencilAlt } from "react-icons/hi";
-import getBlogData from "./Hooks/getBlogData";
+
+const getBlogData = async() =>{
+    const API_URL = process.env.API_URL;
+    console.log(API_URL);
+    
+    try{
+        const res = await fetch(`${API_URL}/api/topics`,{
+            cache: 'no-store'
+        });
+
+        if(!res.ok){
+            throw new Error("Failed to fetch topics");
+        }
+        return res.json();
+    }
+    catch(e){
+        console.log("Error loading topics",e);
+    }
+}
 
 export default async function TopicList(){
 
     const topics = await getBlogData();
-    // console.log(topics);
+    console.log(topics);
 
     return (
         <>
